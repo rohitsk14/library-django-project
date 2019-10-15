@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Welcome</title>
+    <style>
+    .column1
+    {
+          float: left;
+          width: 20%;
+          height: 50px;
+          margin:0px 0px 0px 0px;
+          text-align: center;
+    }
+
+   .row1:after
+{
+          content: "";
+          display: table;
+          clear: both;
+}
+    </style>
+  </head>
+  <body>
+      <img src="media/kbtlogo.png" height="100" width="100" style="margin-top: 20px ">
+      <div style="text-align: right"><img src="media/agrade.jpg" height="100" width="130" style="margin: -130px 0px 0px 0px"></div>
+      <h3 style="text-align: center;color:#00203FFF;margin-top:-100px ">Nashik District Maratha Vidya Prasarak Samaj's</h3>
+      <h2 style="color:#00203FFF;text-align: center;"> Karmaveer Adv. Baburao  Ganpatrao Thakre College of Engineering  </h2>
+      <h2 style="text-align: center;color:#00203FFF"><i> IT  Department , Library </i></h2>
+
+      <div align="right" style="margin-right:100px">
+        <a  href="http://127.0.0.1:8000/accounts/login">
+        <button style="text-align: right" type="button" class="btn btn-outline-secondary">Login</button>  <!--  login button-->
+        </a>
+      </div>
+
+      <div class="jumbotron" style="margin: 20px 100px 0px 100px;background-color: #ADEFD1FF">
+
+          <form action="search" method="post" style="margin: 20px">
+
+            {% csrf_token %}
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" name="query" placeholder="Search Book..." aria-label="search book" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                <input class="btn btn-outline-secondary" id="button-addon2" type="submit" value="Search">
+
+                </div>
+
+              </div>
+          </form>
+      </div>
+
+
+    <div class="jumbotron" style="margin: 20px 100px 30px 100px;background-color: #ADEFD1FF">
+      <div class="row1">
+                <div class="column1">
+                  <p>Book Title</p><hr>
+                </div>
+                <div class="column1">
+                  <p>Author</p><hr>
+                </div>
+                <div class="column1">
+                  <p>Publisher</p><hr>
+                </div>
+                <div class="column1">
+                  <p>No of copies</p><hr>
+                </div>
+                <div class="column1">
+                  <p>Rack No</p><hr>
+                </div>
+      </div>
+
+
+
+      {% for i in list %}
+            <div class="row1">
+                <div class="column1">
+                  <p>{{i.title}}</p>
+                </div>
+                <div class="column1">
+                  <p>{{i.author}}</p>
+                </div>
+                <div class="column1">
+                  <p>{{i.publisher}}</p>
+                </div>
+                <div class="column1">
+                  <p>{{i.no_of_copies}}</p>
+                </div>
+                <div class="column1">
+                  <p>{{i.rack_no}}</p>
+                </div>
+      </div>
+
+      {% endfor %}
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

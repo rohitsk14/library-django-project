@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Welcome</title>
+    <style>
+    .column1
+    {
+          float: left;
+          width: 20%;
+          height: 500px;
+          margin:0px 0px 0px 0px;
+          text-align: center;
+    }
+
+   .row1:after
+{
+          content: "";
+          display: table;
+          clear: both;
+}
+    </style>
+  </head>
+  <body>
+
+<!-- start here  -->
+
+      <!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Welcome</title>
+    <style>
+    .column1
+    {
+          float: left;
+          width: 16.66%;
+          height: 50px;
+          margin:0px 0px 0px 0px;
+          text-align: center;
+    }
+
+   .row1:after
+{
+          content: "";
+          display: table;
+          clear: both;
+}
+    </style>
+  </head>
+  <body>
+      <img src="media/kbtlogo.png" height="100" width="100" style="margin-top: 20px ">
+      <div style="text-align: right"><img src="media/agrade.jpg" height="100" width="130" style="margin: -130px 0px 0px 0px"></div>
+      <h3 style="text-align: center;color:#00203FFF;margin-top:-100px ">Nashik District Maratha Vidya Prasarak Samaj's</h3>
+      <h2 style="color:#00203FFF;text-align: center;"> Karmaveer Adv. Baburao  Ganpatrao Thakre College of Engineering  </h2>
+      <h2 style="text-align: center;color:#00203FFF"><i> IT  Department , Library </i></h2>
+
+
+       <div align="right" style="margin-right:100px">
+      {% if user.is_authenticated %}
+            Hi {{ user.username }}!
+            <p><a href="{% url 'logout' %}">logout</a></p>
+
+            <div align="left" style="margin-left:100px;margin-top:-50px;">
+              <a  href="http://127.0.0.1:8000/records" >
+                <button style="text-align: right" type="button" class="btn btn-outline-secondary">Back</button>  <!--  login button-->
+              </a>
+            </div>
+       </div>
+
+    <div class="jumbotron" style="margin: 20px 100px 30px 100px;background-color: #ADEFD1FF">
+      <div class="row1">
+
+
+
+
+
+
+                <div class="column1">
+                  <p>Book ID</p><hr>
+                </div>
+                <div class="column1">
+                  <p>Student ID</p><hr>
+                </div>
+                <div class="column1">
+                  <p>Student Name</p><hr>
+                </div>
+                <div class="column1">
+                  <p>Year</p><hr>
+                </div>
+                <div class="column1">
+                  <p>Issue Date</p><hr>
+                </div>
+                <div class="column1">
+                  <p>Return Date</p><hr>
+                </div>
+      </div>
+
+
+
+      {% for i in list %}
+            <div class="row1">
+                <div class="column1">
+                  <p>{{i.book_id}}</p>
+                </div>
+                <div class="column1">
+                  <p>{{i.student_id}}</p>
+                </div>
+                <div class="column1">
+                  <p>{{i.student_name}}</p>
+                </div>
+                <div class="column1">
+                  <p>{{i.year}}</p>
+                </div>
+                <div class="column1">
+                  <p>{{i.issue_date}}</p>
+                </div>
+                <div class="column1">
+                  <p>{{i.return_date}}</p>
+                </div>
+      </div>
+
+      {% endfor %}
+
+        {% else %}
+        <hr>
+            <center>
+                <p>You are not logged in</p>
+                <a href="{% url 'login' %}">login</a>
+            </center>
+          {% endif %}
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<!-- end here -->
+
+  </body>
+</html>
